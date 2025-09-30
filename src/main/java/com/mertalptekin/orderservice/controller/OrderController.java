@@ -1,8 +1,8 @@
-package com.mertalptekin.dddapp.controller;
+package com.mertalptekin.orderservice.controller;
 
 
-import com.mertalptekin.dddapp.application.CreateOrderHandler;
-import com.mertalptekin.dddapp.application.dto.CreateOrderRequest;
+import com.mertalptekin.orderservice.application.CreateOrderHandler;
+import com.mertalptekin.orderservice.application.dto.CreateOrderRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

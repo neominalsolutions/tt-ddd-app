@@ -1,4 +1,4 @@
-package com.mertalptekin.dddapp.application.handler;
+package com.mertalptekin.orderservice.application.handler;
 
 
 import com.mertalptekin.dddapp.application.event.OrderSummited;

@@ -1,4 +1,4 @@
-package com.mertalptekin.dddapp.application;
+package com.mertalptekin.orderservice.application;
 
 
 import com.mertalptekin.dddapp.application.dto.CreateOrderRequest;

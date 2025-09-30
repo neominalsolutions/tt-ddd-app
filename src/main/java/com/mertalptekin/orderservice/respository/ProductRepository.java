@@ -1,4 +1,4 @@
-package com.mertalptekin.dddapp.respository;
+package com.mertalptekin.orderservice.respository;
 
 
 import com.mertalptekin.dddapp.service.entity.Product;

@@ -1,4 +1,4 @@
-package com.mertalptekin.dddapp.application.event;
+package com.mertalptekin.orderservice.application.event;
 
 
 // Not: ApplicationEvent olarak In Memory kullanılan eventleri class yapıyoruz ve dili geçmiş zaman kipinde isimlendiriyoruz

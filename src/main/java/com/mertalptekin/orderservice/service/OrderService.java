@@ -1,4 +1,4 @@
-package com.mertalptekin.dddapp.service;
+package com.mertalptekin.orderservice.service;
 
 import com.mertalptekin.dddapp.application.event.OrderSummited;
 import com.mertalptekin.dddapp.service.entity.Order;

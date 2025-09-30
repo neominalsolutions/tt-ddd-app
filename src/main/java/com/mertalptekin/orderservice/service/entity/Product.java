@@ -1,4 +1,4 @@
-package com.mertalptekin.dddapp.service.entity;
+package com.mertalptekin.orderservice.service.entity;
 
 
 import jakarta.persistence.*;
