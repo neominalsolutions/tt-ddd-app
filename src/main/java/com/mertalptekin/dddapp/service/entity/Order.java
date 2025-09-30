@@ -1,8 +1,17 @@
 package com.mertalptekin.dddapp.service.entity;
+import jakarta.persistence.*;
 import lombok.Data;
 
+
+
 @Data
+@Entity
 public class Order {
-    private  Integer id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private  Long id;
+
+    @Column(nullable = false)
     private  String name;
 }

@@ -2,7 +2,7 @@ package com.mertalptekin.dddapp.service;
 
 import com.mertalptekin.dddapp.application.event.OrderSummited;
 import com.mertalptekin.dddapp.service.entity.Order;
-import com.mertalptekin.dddapp.respository.OrderRespository;
+import com.mertalptekin.dddapp.respository.OrderRepository;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class OrderService {
 
-    private final OrderRespository orderRespository;
+    private final OrderRepository orderRespository;
     private final ApplicationEventPublisher applicationEventPublisher;
 
-    public OrderService(OrderRespository orderRespository, ApplicationEventPublisher applicationEventPublisher) {
+    public OrderService(OrderRepository orderRespository, ApplicationEventPublisher applicationEventPublisher) {
         this.orderRespository = orderRespository;
         this.applicationEventPublisher = applicationEventPublisher;
     }
