@@ -3,6 +3,7 @@ package com.mertalptekin.dddapp.service;
 import com.mertalptekin.dddapp.application.event.OrderSummited;
 import com.mertalptekin.dddapp.service.entity.Order;
 import com.mertalptekin.dddapp.respository.OrderRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +19,12 @@ public class OrderService {
         this.applicationEventPublisher = applicationEventPublisher;
     }
 
+    @Transactional
     public void Save(Order entity){
 
+        // entity.setName(null);
         orderRespository.save(entity);
+
         // eventi publish ederek süreci OrderSubmittedListener'a devrettik.
         this.applicationEventPublisher.publishEvent(new OrderSummited(entity,"Order Submited"));
     }
