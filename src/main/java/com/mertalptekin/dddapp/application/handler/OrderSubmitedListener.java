@@ -5,6 +5,7 @@ import com.mertalptekin.dddapp.application.event.OrderSummited;
 import com.mertalptekin.dddapp.respository.ProductRepository;
 import com.mertalptekin.dddapp.service.entity.Product;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
 
 import java.util.Optional;
@@ -22,7 +23,9 @@ public class OrderSubmitedListener {
     // Not: TransactionalEventListener yapısı after commit çalışır. Eğer @Transactional anatasyonu kullanılarak kayıt atılıyorsa. Kayıt commit sonrası tetiklenir. Eğer kayıt başarısız ise rollback dönerse buradaki event tetiklenemez.
     // Senaryo genel olarak veri kaynağına yazıldıktan sonra event fırlat şeklinde POST COMMIT genelde olabilir.
 
-    @TransactionalEventListener
+    // Not: Domain Eventler bir bütün halinde single transaction scope da verikaynağına yazıldığından Pre Save çalışır
+    // Ama-> bazen uygulama içerisinde POST SAVe çalışmamız gerek durumlar olabilir. Integration Event -> Kafka göndermek için verinin commit edilmesi lazım. @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
+    @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
     //@EventListener
     public void orderSubmitted(OrderSummited event) throws InterruptedException {
         // buradaki logic devam eder.
